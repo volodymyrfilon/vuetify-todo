@@ -25,7 +25,7 @@
 
 		<v-app-bar app color="primary" dark prominent>
 			<template v-slot:img="{ props }">
-				<v-img v-bind="props" dark prominent src="nature.jpg"></v-img>
+				<v-img v-bind="props" src="nature.jpg"></v-img>
 			</template>
 
 			<v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
