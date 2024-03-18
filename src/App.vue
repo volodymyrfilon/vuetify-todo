@@ -23,9 +23,12 @@
 			</v-list>
 		</v-navigation-drawer>
 
-		<v-app-bar app color="primary" dark prominent>
+		<v-app-bar app color="primary" dark src="nature.jpg" prominent>
 			<template v-slot:img="{ props }">
-				<v-img v-bind="props" src="nature.jpg"></v-img>
+				<v-img
+					v-bind="props"
+					gradient="to top right, rgba(19,84,122,.5), rgba(128,208,199,.8)"
+				></v-img>
 			</template>
 
 			<v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
