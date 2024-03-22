@@ -7,7 +7,7 @@
 			<v-card-actions>
 				<v-spacer></v-spacer>
 
-				<v-btn @click="dialog = false" text> No </v-btn>
+				<v-btn @click="$emit('close')" text> No </v-btn>
 
 				<v-btn
 					@click="$store.dispatch('deleteTask', task.id)"
