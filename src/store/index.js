@@ -1,4 +1,3 @@
-import Vue from 'vue'
 import Vuex from 'vuex'
 
 Vue.use(Vuex)
@@ -10,16 +9,19 @@ export default new Vuex.Store({
 				id: 1,
 				title: 'Wake up',
 				done: false,
+				dueDate: '2023-10-03',
 			},
 			{
 				id: 2,
 				title: 'Make bed',
 				done: false,
+				dueDate: '2023-10-07',
 			},
 			{
 				id: 3,
 				title: 'Eat bananas',
 				done: false,
+				dueDate: null,
 			},
 		],
 		snackbar: {
@@ -34,6 +36,7 @@ export default new Vuex.Store({
 				id: Date.now(),
 				title: newTaskTitle,
 				done: false,
+				dueDate: null,
 			}
 			state.tasks.push(newTask)
 		},
@@ -47,6 +50,10 @@ export default new Vuex.Store({
 		updateTaskTitle(state, payload) {
 			let task = state.tasks.filter(task => task.id === payload.id)[0]
 			task.title = payload.title
+		},
+		updateTaskDueDate(state, payload) {
+			let task = state.tasks.filter(task => task.id === payload.id)[0]
+			task.dueDate = payload.dueDate
 		},
 		showSnackbar(state, text) {
 			let timeout = 0
@@ -75,6 +82,10 @@ export default new Vuex.Store({
 		updateTaskTitle({ commit }, payload) {
 			commit('updateTaskTitle', payload)
 			commit('showSnackbar', 'Task updated!')
+		},
+		updateTaskDueDate({ commit }, payload) {
+			commit('updateTaskDueDate', payload)
+			commit('showSnackbar', 'Due date updated!')
 		},
 	},
 	modules: {},
