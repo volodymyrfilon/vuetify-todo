@@ -1,14 +1,20 @@
 <template>
 	<v-app>
 		<v-navigation-drawer app v-model="drawer">
-			<v-list-item>
-				<v-list-item-content>
-					<v-list-item-title class="title">Vuetify Todo</v-list-item-title>
-					<v-list-item-subtitle>Your daily organizer!</v-list-item-subtitle>
-				</v-list-item-content>
-			</v-list-item>
-
-			<v-divider></v-divider>
+			<v-img
+				class="pa-4 pt-7"
+				src="nature.jpg"
+				height="170"
+				gradient="to top right, rgba(19,84,122,.5), rgba(128,208,199,.8)"
+			>
+				<v-avatar size="70" class="mb-2 border">
+					<img src="avatar.jpg" alt="user" />
+				</v-avatar>
+				<div class="white--text text-subtitle-1 font-weight-bold">
+					Volodymyr Filon
+				</div>
+				<div class="white--text text-subtitle-2">@volodymyrfilon</div>
+			</v-img>
 
 			<v-list dense nav>
 				<v-list-item v-for="item in items" :key="item.title" link :to="item.to">
