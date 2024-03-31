@@ -31,7 +31,7 @@
 				></v-img>
 			</template>
 
-			<v-container class="pa-0">
+			<v-container class="">
 				<v-row>
 					<v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 					<v-spacer></v-spacer>
