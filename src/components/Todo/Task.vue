@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import { format, formatDate } from 'date-fns'
+import { format } from 'date-fns'
 export default {
 	props: ['task'],
 	filters: {
