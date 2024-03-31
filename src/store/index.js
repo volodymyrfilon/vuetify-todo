@@ -1,3 +1,4 @@
+import Vue from 'vue'
 import Vuex from 'vuex'
 
 Vue.use(Vuex)
@@ -9,13 +10,13 @@ export default new Vuex.Store({
 				id: 1,
 				title: 'Wake up',
 				done: false,
-				dueDate: '2023-10-03',
+				dueDate: '2020-10-16',
 			},
 			{
 				id: 2,
-				title: 'Make bed',
+				title: 'Get bananas',
 				done: false,
-				dueDate: '2023-10-07',
+				dueDate: '2020-10-17',
 			},
 			{
 				id: 3,
@@ -29,7 +30,6 @@ export default new Vuex.Store({
 			text: '',
 		},
 	},
-	getters: {},
 	mutations: {
 		addTask(state, newTaskTitle) {
 			let newTask = {
@@ -85,8 +85,8 @@ export default new Vuex.Store({
 		},
 		updateTaskDueDate({ commit }, payload) {
 			commit('updateTaskDueDate', payload)
-			commit('showSnackbar', 'Due date updated!')
+			commit('showSnackbar', 'Due Date Updated!')
 		},
 	},
-	modules: {},
+	getters: {},
 })

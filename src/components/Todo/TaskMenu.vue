@@ -1,10 +1,10 @@
 <template>
 	<div>
-		<v-menu>
+		<v-menu bottom left>
 			<template v-slot:activator="{ on, attrs }">
-				<v-btn v-bind="attrs" color="primary" icon v-on="on">
-					<v-icon>mdi-dots-vertical</v-icon></v-btn
-				>
+				<v-btn color="primary" icon v-bind="attrs" v-on="on">
+					<v-icon>mdi-dots-vertical</v-icon>
+				</v-btn>
 			</template>
 
 			<v-list>
@@ -23,18 +23,18 @@
 
 		<dialog-edit
 			v-if="dialogs.edit"
-			:task="task"
 			@close="dialogs.edit = false"
+			:task="task"
 		/>
 		<dialog-due-date
 			v-if="dialogs.dueDate"
-			:task="task"
 			@close="dialogs.dueDate = false"
+			:task="task"
 		/>
 		<dialog-delete
 			v-if="dialogs.delete"
-			:task="task"
 			@close="dialogs.delete = false"
+			:task="task"
 		/>
 	</div>
 </template>
@@ -43,6 +43,11 @@
 export default {
 	props: ['task'],
 	data: () => ({
+		dialogs: {
+			edit: false,
+			dueDate: false,
+			delete: false,
+		},
 		items: [
 			{
 				title: 'Edit',
@@ -66,11 +71,6 @@ export default {
 				},
 			},
 		],
-		dialogs: {
-			edit: false,
-			dueDate: false,
-			delete: false,
-		},
 	}),
 	methods: {
 		handleClick(index) {
