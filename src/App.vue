@@ -31,13 +31,16 @@
 				></v-img>
 			</template>
 
-			<v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-
-			<v-toolbar-title>Vuetify Todo</v-toolbar-title>
-
-			<v-spacer></v-spacer>
-
-			<search />
+			<v-container class="pa-0">
+				<v-row>
+					<v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+					<v-spacer></v-spacer>
+					<search />
+				</v-row>
+				<v-row>
+					<v-toolbar-title class="ml-4">Vuetify Todo</v-toolbar-title>
+				</v-row>
+			</v-container>
 		</v-app-bar>
 
 		<v-main>
