@@ -1,4 +1,3 @@
-import Vue from 'vue'
 import Vuex from 'vuex'
 
 Vue.use(Vuex)
@@ -60,6 +59,10 @@ export default new Vuex.Store({
 		updateTaskDueDate(state, payload) {
 			let task = state.tasks.filter(task => task.id === payload.id)[0]
 			task.dueDate = payload.dueDate
+		},
+		setTasks(state, tasks) {
+			console.log('tasks:', tasks)
+			// state.tasks = tasks
 		},
 		showSnackbar(state, text) {
 			let timeout = 0
