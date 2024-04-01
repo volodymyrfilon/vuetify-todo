@@ -7,8 +7,8 @@
 			@ripple="false"
 		>
 			<template v-slot:default>
-				<v-list-item-action
-					><v-checkbox :input-value="task.done" color="primary"></v-checkbox
+				<v-list-item-action>
+					<v-checkbox :input-value="task.done" color="primary"></v-checkbox
 				></v-list-item-action>
 
 				<v-list-item-content>

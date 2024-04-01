@@ -1,3 +1,4 @@
+import Vue from 'vue'
 import Vuex from 'vuex'
 
 Vue.use(Vuex)
@@ -10,20 +11,32 @@ export default new Vuex.Store({
 			{
 				id: 1,
 				title: 'Wake up',
-				done: false,
+				done: true,
 				dueDate: '2020-10-16',
 			},
 			{
 				id: 2,
-				title: 'Get bananas',
+				title: 'Buy milk',
 				done: false,
 				dueDate: '2020-10-17',
 			},
 			{
 				id: 3,
-				title: 'Eat bananas',
+				title: 'Drink milk',
 				done: false,
 				dueDate: null,
+			},
+			{
+				id: 4,
+				title: 'Go to school',
+				done: false,
+				dueDate: '2020-10-18',
+			},
+			{
+				id: 5,
+				title: 'Play football',
+				done: false,
+				dueDate: '2020-10-21',
 			},
 		],
 		snackbar: {
@@ -61,8 +74,7 @@ export default new Vuex.Store({
 			task.dueDate = payload.dueDate
 		},
 		setTasks(state, tasks) {
-			console.log('tasks:', tasks)
-			// state.tasks = tasks
+			state.tasks = tasks
 		},
 		showSnackbar(state, text) {
 			let timeout = 0
