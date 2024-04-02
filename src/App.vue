@@ -29,11 +29,11 @@
 			</v-list>
 		</v-navigation-drawer>
 
-		<v-app-bar app color="primary" dark src="nature.jpg" prominent height="170">
+		<v-app-bar app color="primary" dark src="nature.jpg" prominent height="236">
 			<template v-slot:img="{ props }">
 				<v-img
 					v-bind="props"
-					gradient="to top right, rgba(19,84,122,.5), rgba(128,208,199,.8)"
+					gradient="to top right, rgba(19,84,122,.75), rgba(128,208,199,.75)"
 				></v-img>
 			</template>
 
@@ -50,6 +50,9 @@
 				</v-row>
 				<v-row>
 					<live-date-time />
+				</v-row>
+				<v-row>
+					<field-add-task />
 				</v-row>
 			</v-container>
 		</v-app-bar>
@@ -74,6 +77,7 @@ export default {
 		this.$store.dispatch('getTasks')
 	},
 	components: {
+		'field-add-task': require('@/components/Todo/FieldAddTask.vue').default,
 		snackbar: require('@/components/Shared/Snackbar.vue').default,
 		search: require('@/components/Tools/Search.vue').default,
 		'live-date-time': require('@/components/Tools/LiveDateTime.vue').default,
