@@ -29,7 +29,14 @@
 			</v-list>
 		</v-navigation-drawer>
 
-		<v-app-bar app color="primary" dark src="nature.jpg" prominent height="236">
+		<v-app-bar
+			app
+			color="primary"
+			dark
+			src="nature.jpg"
+			prominent
+			:height="$route.path === '/' ? 236 : 170"
+		>
 			<template v-slot:img="{ props }">
 				<v-img
 					v-bind="props"
@@ -51,7 +58,7 @@
 				<v-row>
 					<live-date-time />
 				</v-row>
-				<v-row>
+				<v-row v-if="$route.path === '/'">
 					<field-add-task />
 				</v-row>
 			</v-container>
